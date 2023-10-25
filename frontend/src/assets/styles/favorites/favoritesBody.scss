@@ -1,0 +1,36 @@
+@import "../../colors.scss";
+
+.favorites-container {
+	margin-top: 24px;
+	display: flex;
+	flex-direction: row;
+	gap: 24px;
+
+	.categories {
+		width: 63px;
+	}
+
+	.news {
+		width: 100%;
+
+		.news-title {
+			color: $primary-text-color;
+			font-size: 18px;
+			font-family: Inter;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 24px;
+			letter-spacing: -0.153px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.categories {
+		display: none;
+	}
+
+	.news-title {
+		display: none;
+	}
+}

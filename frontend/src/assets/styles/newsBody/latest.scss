@@ -1,0 +1,65 @@
+@import "../../colors.scss";
+
+.latest-container {
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: 0px 1px 2px -1px $box-shadow;
+	padding: 18px 2px 15px 15px;
+
+	.latest-title {
+		display: flex;
+		align-items: center;
+
+		.title {
+			margin-left: 10px;
+		}
+	}
+
+	.latest-body {
+		margin-top: 12px;
+		height: 720px;
+		overflow: scroll;
+		overflow-x: hidden;
+
+		/* width */
+		&::-webkit-scrollbar {
+			width: 4px !important;
+		}
+
+		/* Track */
+		&::-webkit-scrollbar-track {
+			color: white !important;
+			border: none !important;
+		}
+
+		/* Handle */
+		&::-webkit-scrollbar-thumb {
+			border-radius: 2px !important;
+			background: rgba(0, 0, 0, 0.24) !important;
+		}
+	}
+
+	.latest-footer {
+		padding-top: 15px;
+
+		& > a {
+			display: flex;
+			align-items: center;
+			color: $primary-blue;
+			font-size: 14px;
+			font-family: Inter;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 20px;
+			letter-spacing: -0.096px;
+			text-decoration: none;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.grid-container {
+		margin-top: 16px;
+		gap: 0px !important;
+	}
+}

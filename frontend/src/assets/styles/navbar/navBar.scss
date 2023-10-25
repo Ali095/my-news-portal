@@ -1,0 +1,128 @@
+@import "../../colors.scss";
+
+.navbar {
+	margin-top: 35px;
+}
+
+.navbar__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	&-logo {
+		color: $primary-text-color;
+		font-size: 24px;
+		font-family: Inter;
+		font-style: normal;
+		font-weight: 900;
+		line-height: normal;
+	}
+
+	&-logo-red {
+		color: $primary-button-active-color;
+	}
+
+	&-icon {
+		cursor: pointer;
+		border: none;
+		padding: 0;
+
+		& > svg {
+			fill: $primary-text-color;
+		}
+	}
+}
+
+@media (min-width: 767px) {
+	.screen-toggle {
+		display: flex;
+		flex-direction: row;
+
+		.navbar__search-bar {
+			margin-top: 0px;
+		}
+	}
+
+	.navbar__inner {
+		margin-right: 43px;
+
+		&-logo {
+			font-size: 32px;
+		}
+	}
+}
+
+// Active hamb
+.navbar .nav.active {
+	top: 0;
+
+	.navbar__active {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+
+		&-logo {
+			margin-top: 111px;
+			font-size: 32px;
+			font-family: Inter;
+			font-style: normal;
+			font-weight: 900;
+			line-height: normal;
+		}
+
+		&-logo-red {
+			color: $primary-button-active-color;
+		}
+	}
+}
+
+.exit {
+	position: absolute;
+	top: 28px;
+	right: 18px;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+
+	& > svg {
+		fill: $primary-text-color;
+	}
+}
+
+.navbar .nav {
+	position: fixed;
+	z-index: 1000;
+	right: 0;
+	top: -100%;
+	width: 100%;
+	height: 100%;
+	background-color: $background-color;
+	transition: all 0.6s;
+}
+
+@media (min-width: 767px) {
+	.navbar_inner {
+		display: flex;
+		align-items: center;
+	}
+
+	.navbar__inner-icon,
+	.exit {
+		display: none;
+	}
+}
+
+#navbar-line {
+	margin-top: 28px;
+	width: 100%;
+	height: 1px;
+	color: $line-break-color;
+	opacity: 0.1;
+}
+
+@media (max-width: 767px) {
+	#navbar-line {
+		display: none;
+	}
+}

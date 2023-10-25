@@ -1,0 +1,89 @@
+@import "../../colors.scss";
+
+.navbar__search-bar {
+	width: 750px;
+	border-radius: 10px;
+	background: #fff;
+	box-shadow: 0px 1px 2px -1px $box-shadow;
+	margin-top: 20px;
+	height: 48px;
+}
+
+.search-bar__form {
+	width: 100%;
+	&__label {
+		width: 100%;
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
+
+	&__label:before {
+		content: "";
+		position: absolute;
+		top: 15px;
+		bottom: 0;
+		left: 15px;
+		right: 15px;
+		width: 20px;
+		height: 20px;
+		background: url(../../svg/Search.svg) center / contain no-repeat;
+		opacity: 0.4;
+	}
+
+	&__submit {
+		cursor: pointer;
+		border: none;
+		min-width: 95px;
+		height: 40px;
+		border-radius: 6px;
+		margin-right: 5px;
+		background: $primary-button-active-color;
+		color: #fff;
+		text-align: center;
+		font-size: 15px;
+		font-family: Inter;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 20px;
+		text-transform: uppercase;
+	}
+
+	&__input {
+		box-sizing: border-box; // Oduzima padding koji sam dodao za sirinu
+		opacity: 0.4;
+		padding: 16px 50px 16px;
+		border: none;
+		outline: none;
+		width: 90%;
+	}
+}
+
+@media (max-width: 767px) {
+	.navbar__search-bar {
+		width: 100%;
+	}
+
+	.search-bar__form {
+		&__submit {
+			display: none;
+		}
+
+		&__label:before {
+			width: 16px;
+			height: 16px;
+		}
+	}
+}
+
+.nav.active {
+	.navbar__search-bar {
+		margin: 64px 16px 0px 16px;
+		width: calc(100% - 32px);
+	}
+
+	.search-bar__form__input {
+		display: flex;
+		justify-content: space-between;
+	}
+}
